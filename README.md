@@ -1,2 +1,191 @@
-# giving-hand
-Graduation project, anti-food waster webapp, with a mobile app seperate from this code.
+# Giving Hand
+
+**Giving Hand** is a food waste reduction and donation platform designed to connect organizations with surplus food to charities and communities in need.
+
+Developed as a **graduation project**, the platform provides a digital workflow for creating, managing, accepting, and coordinating food donations, helping reduce food waste while making surplus food easier to redistribute.
+
+> 🌐 **Live Demo:** [giving-hand.vercel.app](https://giving-hand.vercel.app/)
+
+## Overview
+
+Food waste and food insecurity exist simultaneously: large quantities of edible food can go to waste while organizations and communities still need access to food resources.
+
+Giving Hand addresses this gap by providing a centralized platform where food-producing organizations can list available surplus food and charities can discover and accept donations.
+
+The project consists of a **web platform** and a separate **mobile application**.
+
+## Key Features
+
+* **Food donation management** — Organizations can create food donation tickets with details such as food type, category, quantity, expiry date, pickup location, and availability.
+* **Charity discovery and acceptance** — Charities can browse available organizations and review incoming food donation opportunities.
+* **Donation workflow** — Food tickets move through a structured lifecycle from creation to acceptance, rejection, expiration, or conversion.
+* **Delivery coordination** — Supports delivery capabilities and pickup preferences between organizations and charities.
+* **Multiple user roles** — Dedicated workflows for organizations, charities, factories, administrators, and general users.
+* **Database-backed operations** — Donation and user data are stored and managed through Supabase.
+* **Validation and error handling** — Forms, authentication checks, loading states, database errors, and user feedback are handled throughout the application.
+* **Responsive interface** — Designed to provide a consistent experience across different screen sizes.
+* **Maps and data visualization** — Uses Leaflet for location-based functionality and Recharts for data visualization.
+
+## Donation Workflow
+
+```text
+Organization
+     │
+     ▼
+Create Food Ticket
+     │
+     ▼
+Supabase Database
+     │
+     ▼
+Charity Reviews Donation
+     │
+     ├── Accept ──► Delivery / Pickup Coordination
+     │
+     └── Decline
+```
+
+The implemented workflow supports database-backed food tickets, charity approval or rejection, status updates, and delivery coordination.
+
+## Tech Stack
+
+### Frontend
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* React Router
+* shadcn/ui / Radix UI
+* React Hook Form
+* Zod
+* Framer Motion
+
+### Backend & Data
+
+* Supabase
+* PostgreSQL
+
+### Maps & Visualization
+
+* Leaflet
+* React Leaflet
+* Recharts
+
+### Development
+
+* ESLint
+* TypeScript
+* npm
+
+## Project Structure
+
+```text
+giving-hand/
+├── public/
+├── src/
+│   ├── pages/
+│   │   ├── admin/
+│   │   ├── auth/
+│   │   ├── charity/
+│   │   ├── factory/
+│   │   ├── organization/
+│   │   └── user/
+│   ├── components/
+│   └── utils/
+├── database-schema.sql
+├── FOOD_TICKET_WORKFLOW.md
+├── package.json
+└── vite.config.ts
+```
+
+## Database
+
+The application uses Supabase for persistent data storage.
+
+The database schema includes tables for:
+
+* Users
+* Food tickets
+* Delivery requests
+* Monetary donations
+
+Food tickets contain information including:
+
+* Organization
+* Food type and category
+* Weight and number of pieces
+* Expiry date
+* Pickup location
+* Preferred pickup times
+* Delivery capability
+* Donation status
+* Accepting charity
+* Creation and update timestamps
+
+The repository also includes `database-schema.sql` and detailed documentation for the food-ticket workflow.
+
+## Running Locally
+
+### Prerequisites
+
+* Node.js
+* npm
+* A Supabase project
+
+### Installation
+
+```bash
+git clone https://github.com/Zeyadistired/giving-hand.git
+cd giving-hand
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file and configure the required Supabase credentials:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### Database Setup
+
+Run the SQL contained in:
+
+```text
+database-schema.sql
+```
+
+in your Supabase SQL editor.
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+The application will then be available through the local Vite development server.
+
+### Production Build
+
+```bash
+npm run build
+```
+
+## Project Documentation
+
+Additional implementation details for the food donation workflow can be found in:
+
+[`FOOD_TICKET_WORKFLOW.md`](./FOOD_TICKET_WORKFLOW.md)
+
+## Project Status
+
+This repository contains the web application developed as part of the Giving Hand graduation project.
+
+The mobile application is maintained separately from this repository.
+
+## License
+
+This project was developed as an academic graduation project.
