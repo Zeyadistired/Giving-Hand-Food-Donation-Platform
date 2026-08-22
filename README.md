@@ -95,6 +95,10 @@ giving-hand/
 │   ├── Store/
 │   ├── lib/
 │   └── ...
+├── archive/              # Project archive: documents, posters, media, prototypes
+│   ├── documents/
+│   ├── ShareBite/
+│   └── site-nextjs-v1/
 ├── database-schema.sql
 ├── FOOD_TICKET_WORKFLOW.md
 ├── package.json
@@ -189,6 +193,12 @@ npm start
 ```
 
 Then scan the QR code with the **Expo Go** app, or press `i` / `a` for the iOS simulator / Android emulator. Full setup, configuration, and build instructions: [`app/README.md`](./app/README.md).
+
+## Project Archive
+
+The [`archive/`](./archive) folder preserves everything produced during the graduation project: reports, presentations, posters, marketing assets, database design spreadsheets, ERDs, planning screenshots, an early iOS prototype (`ShareBite/`), and the earlier Next.js iteration of the website (`site-nextjs-v1/`).
+
+See [`archive/README.md`](./archive/README.md) for a full inventory.
 
 ## Project Documentation
 
