@@ -12,7 +12,7 @@ Food waste and food insecurity exist simultaneously: large quantities of edible 
 
 Giving Hand addresses this gap by providing a centralized platform where food-producing organizations can list available surplus food and charities can discover and accept donations.
 
-The project consists of a **web platform** and a separate **mobile application**.
+The project consists of a **web platform** and a companion **mobile application**, both included in this repository (mobile app under [`app/`](./app)).
 
 ## Key Features
 
@@ -89,6 +89,12 @@ giving-hand/
 │   │   └── user/
 │   ├── components/
 │   └── utils/
+├── app/                  # Mobile application (React Native / Expo)
+│   ├── app/              # Expo Router routes
+│   ├── Components/
+│   ├── Store/
+│   ├── lib/
+│   └── ...
 ├── database-schema.sql
 ├── FOOD_TICKET_WORKFLOW.md
 ├── package.json
@@ -132,8 +138,8 @@ The repository also includes `database-schema.sql` and detailed documentation fo
 ### Installation
 
 ```bash
-git clone https://github.com/Zeyadistired/giving-hand.git
-cd giving-hand
+git clone https://github.com/Zeyadistired/Giving-Hand-Food-Donation-Platform.git
+cd Giving-Hand-Food-Donation-Platform
 npm install
 ```
 
@@ -170,6 +176,20 @@ The application will then be available through the local Vite development server
 npm run build
 ```
 
+## Mobile Application
+
+The Giving Hand mobile app (React Native / Expo) lives in the [`app/`](./app) folder with its own documentation.
+
+Quick start:
+
+```bash
+cd app
+npm install
+npm start
+```
+
+Then scan the QR code with the **Expo Go** app, or press `i` / `a` for the iOS simulator / Android emulator. Full setup, configuration, and build instructions: [`app/README.md`](./app/README.md).
+
 ## Project Documentation
 
 Additional implementation details for the food donation workflow can be found in:
@@ -178,9 +198,7 @@ Additional implementation details for the food donation workflow can be found in
 
 ## Project Status
 
-This repository contains the web application developed as part of the Giving Hand graduation project.
-
-The mobile application is maintained separately from this repository.
+This repository contains both the **web application** and the **mobile application** (`app/`) developed as part of the Giving Hand graduation project.
 
 ## License
 

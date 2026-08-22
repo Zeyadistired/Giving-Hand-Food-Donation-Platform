@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "GivingHand Mobile Platform",
+    "slug": "givinghand-mobile-platform",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./Assets/Images/Icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./Assets/Images/Icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.rork.givinghand-mobile-platform"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./Assets/Images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "app.rork.givinghand-mobile-platform"
+    },
+    "web": {
+      "favicon": "./Assets/Images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://rork.com/"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
