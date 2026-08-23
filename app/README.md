@@ -100,17 +100,23 @@ Roles are stored on the `users` table in Supabase and hydrated into `Store/authS
 
 ## Supabase Configuration
 
-The Supabase URL and anon key currently live directly in [`lib/supabase.ts`](./lib/supabase.ts):
+The app reads its Supabase URL and anon key from environment variables with a fallback to the original project credentials hardcoded in [`lib/supabase.ts`](./lib/supabase.ts).
 
-```ts
-const supabaseUrl = 'https://<project>.supabase.co';
-const supabaseAnonKey = '<anon-key>';
+To use your own Supabase project:
+
+```bash
+cp .env.example .env   # then fill in your values
+npm start              # restart Metro after changing .env
+```
+
+```env
+EXPO_PUBLIC_SUPABASE_URL=https://<project>.supabase.co
+EXPO_PUBLIC_SUPABASE_ANON_KEY=<anon-key>
 ```
 
 Notes:
 
 - The **anon key is a publishable key** — it is safe to ship in client code as long as Row Level Security (RLS) policies are enabled on your Supabase project.
-- To point the app at a different Supabase project, edit those two values.
 - The expected tables (`users`, `money_donations`, `donation_tickets`) and the approval workflow are documented in [`SUPABASE_INTEGRATION_SUMMARY.md`](./SUPABASE_INTEGRATION_SUMMARY.md).
 
 ## Known Notes

@@ -1,8 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Supabase configuration
-const supabaseUrl = 'https://jgpuwacstfbtpubvhsxa.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpncHV3YWNzdGZidHB1YnZoc3hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA4ODc3NTMsImV4cCI6MjA2NjQ2Mzc1M30.6Cw3ZwiC8W-kxTd4FNIR27UWqKjgd06cFa72WxeXAyU';
+// Override via a `.env` file (see .env.example): EXPO_PUBLIC_SUPABASE_URL / EXPO_PUBLIC_SUPABASE_ANON_KEY
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL ?? 'https://jgpuwacstfbtpubvhsxa.supabase.co';
+const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpncHV3YWNzdGZidHB1YnZoc3hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA4ODc3NTMsImV4cCI6MjA2NjQ2Mzc1M30.6Cw3ZwiC8W-kxTd4FNIR27UWqKjgd06cFa72WxeXAyU';
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {

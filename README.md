@@ -149,12 +149,18 @@ npm install
 
 ### Environment Variables
 
-Create a `.env` file and configure the required Supabase credentials:
+A ready-to-fill template is provided at [`.env.example`](./.env.example) — copy it to `.env` and configure the required Supabase credentials:
+
+```bash
+cp .env.example .env
+```
 
 ```env
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
+
+> Note: as shipped, most pages read their Supabase URL/key directly from `src/utils/supabaseClient.ts`; paste your own project's values there if you don't want to rewire imports through env vars.
 
 ### Database Setup
 

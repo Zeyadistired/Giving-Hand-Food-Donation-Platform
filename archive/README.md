@@ -41,7 +41,7 @@ An early native iOS prototype of the app built with SwiftUI in Xcode. It was a s
 
 An earlier full iteration of the website built with **Next.js** (App Router) + Supabase, later superseded by the current Vite + React version deployed at the repository root.
 
-Includes its own [`README.md`](./site-nextjs-v1/README.md), [`SUPABASE_SETUP.md`](./site-nextjs-v1/SUPABASE_SETUP.md), and a set of numbered SQL scripts (`step1_…step7_…`) plus restoration/diagnostic scripts used to build and repair the database during development.
+Includes its own [`README.md`](./site-nextjs-v1/README.md), [`SUPABASE_SETUP.md`](./site-nextjs-v1/SUPABASE_SETUP.md), a ready-to-fill [`.env.local.example`](./site-nextjs-v1/.env.local.example) (copy to `.env.local` — covers Supabase keys, the server-side service-role key, and SMTP email settings), and a set of numbered SQL scripts (`step1_…step7_…`) plus restoration/diagnostic scripts used to build and repair the database during development.
 
 To run it locally (for reference only):
 
