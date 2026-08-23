@@ -55,10 +55,17 @@ npm run dev
 
 | Excluded | Reason |
 | --- | --- |
-| `Website and App.zip` (290 MB) | Exceeds GitHub's 100 MB-per-file hard limit. Its contents are already archived here in extracted form (App v1 → [`app/`](../app), Site → `site-nextjs-v1/`) |
-| `Backups/` (6.7 GB of versioned zips — App v1–v7, Site v1–v5) | Every individual zip is 121 MB – 3.6 GB, above GitHub's per-file limit. Kept on local storage |
+| `Website and App.zip` (276 MB) | Exceeds GitHub's 100 MB-per-file hard limit. Its contents are already archived here in extracted form (App v1 → [`app/`](../app), Site → `site-nextjs-v1/`). **Preserved as a [GitHub Release asset](https://github.com/Zeyadistired/Giving-Hand-Food-Donation-Platform/releases/tag/project-backup-archive)** |
+| `Backups/` (6.7 GB of versioned zips — App v1–v7, Site v1–v5, `BACKUPS 1-9.zip`, `Old App and Site Backups.zip`) | Every individual zip is 121 MB – 3.6 GB, above GitHub's per-file limit. **All preserved via the [project-backup-archive release](https://github.com/Zeyadistired/Giving-Hand-Food-Donation-Platform/releases/tag/project-backup-archive)**; the two largest are split into parts with reassembly instructions |
 | `node_modules/`, `.next/`, `.expo/` | Dependency/build artifacts — fully regenerable via `npm install` |
 | `.idea/`, `.vscode/`, `xcuserdata/`, `.DS_Store`, `__MACOSX/` | IDE/system metadata and caches |
 | A hidden `.env.local` found inside Site v1 2 | Environment/secrets file — deliberately never committed to a public repository |
 
-If the large backups ever need to be preserved alongside this repo, GitHub Releases assets (up to 2 GB per file) or external storage are the appropriate options.
+### Restoring the split backups from the Release
+
+Download all parts of a set into one folder, then:
+
+```bash
+cat Old-App-and-Site-Backups.zip.part* > "Old App and Site Backups.zip"   # 13 parts → 3.6 GB
+cat BACKUPS-1-9.zip.part*             > "BACKUPS 1-9.zip"                 #  5 parts → 1.4 GB
+```

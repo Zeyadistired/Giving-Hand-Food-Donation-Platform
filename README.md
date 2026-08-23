@@ -198,7 +198,7 @@ Then scan the QR code with the **Expo Go** app, or press `i` / `a` for the iOS s
 
 The [`archive/`](./archive) folder preserves everything produced during the graduation project: reports, presentations, posters, marketing assets, database design spreadsheets, ERDs, planning screenshots, an early iOS prototype (`ShareBite/`), and the earlier Next.js iteration of the website (`site-nextjs-v1/`).
 
-See [`archive/README.md`](./archive/README.md) for a full inventory.
+See [`archive/README.md`](./archive/README.md) for a full inventory. Oversized backups (version-history zips too large for the repository) are preserved as assets of the [project-backup-archive release](https://github.com/Zeyadistired/Giving-Hand-Food-Donation-Platform/releases/tag/project-backup-archive).
 
 ## Project Documentation
 
